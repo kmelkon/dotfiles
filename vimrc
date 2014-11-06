@@ -1,7 +1,11 @@
 " .vimrc
 
-
-
+" Now with the cursor on Hello, press ysiw] (iw is a text object).
+" Now wrap the entire line in parentheses with yssb or yss).
+" Finally, let's try out visual mode. Press a capital V (for linewise visual
+" mode) followed by S<p class="important">.
+"
+"
 " compatibility
 set nocompatible
 set encoding=utf-8
@@ -29,7 +33,15 @@ Plugin 'MaxSt/FlatColor'
 Plugin 'morhetz/gruvbox'
 Plugin 'daylerees/colour-schemes'
 Plugin 'cakebaker/scss-syntax.vim'
-
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+Plugin 'Raimondi/delimitMate'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'bling/vim-airline'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mattn/emmet-vim'
 
 
 " All of your Plugins must be added before the following line
@@ -120,17 +132,8 @@ set ignorecase
 " ..except if we input a capital letter
 set smartcase
 
-
-function! NumberToggle()
-    if(&relativenumber == 1)
-        set number
-    else
-        set relativenumber
-    endif
-endfunc
-
-nnoremap <C-n> :call NumberToggle()<cr>
-
+" mapping to open NerdTree
+"map <C-n> :NERDTreeToggle<CR>
 
 
 
@@ -165,3 +168,30 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+
+" AirLine config
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='light'
+
+" Mapings for buffers
+" Mappings to access buffers (don't use "\p" because a
+" delay before pressing "p" would accidentally paste).
+" \l       : list buffers
+" \b \f \g : go back/forward/last-used
+" \1 \2 \3 : go to buffer 1/2/3 etc
+ nnoremap <Leader>l :ls<CR>
+ nnoremap <Leader>b :bp<CR>
+ nnoremap <Leader>f :bn<CR>
+ nnoremap <Leader>g :e#<CR>
+ nnoremap <Leader>1 :1b<CR>
+ nnoremap <Leader>2 :2b<CR>
+ nnoremap <Leader>3 :3b<CR>
+ nnoremap <Leader>4 :4b<CR>
+ nnoremap <Leader>5 :5b<CR>
+ nnoremap <Leader>6 :6b<CR>
+ nnoremap <Leader>7 :7b<CR>
+ nnoremap <Leader>8 :8b<CR>
+ nnoremap <Leader>9 :9b<CR>
+ nnoremap <Leader>0 :10b<CR>
