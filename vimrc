@@ -1,10 +1,5 @@
 " .vimrc
 
-" Now with the cursor on Hello, press ysiw] (iw is a text object).
-" Now wrap the entire line in parentheses with yssb or yss).
-" Finally, let's try out visual mode. Press a capital V (for linewise visual
-" mode) followed by S<p class="important">.
-"
 "
 " compatibility
 set nocompatible
