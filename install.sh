@@ -36,5 +36,14 @@ for layout in "$DOTFILES_DIR/zellij/layouts/"*.kdl; do
     backup_and_link "$layout" "$HOME/.config/zellij/layouts/$layout_name"
 done
 
+# Claude Code
+backup_and_link "$DOTFILES_DIR/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+backup_and_link "$DOTFILES_DIR/claude/settings.json" "$HOME/.claude/settings.json"
+backup_and_link "$DOTFILES_DIR/claude/settings.local.json" "$HOME/.claude/settings.local.json"
+backup_and_link "$DOTFILES_DIR/claude/statusline-command.sh" "$HOME/.claude/statusline-command.sh"
+backup_and_link "$DOTFILES_DIR/claude/commands" "$HOME/.claude/commands"
+backup_and_link "$DOTFILES_DIR/claude/skills" "$HOME/.claude/skills"
+backup_and_link "$DOTFILES_DIR/claude/scripts" "$HOME/.claude/scripts"
+
 echo ""
 echo "Done! Restart your shell or run: source ~/.zshrc"
