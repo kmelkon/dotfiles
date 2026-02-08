@@ -1,4 +1,8 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "ENABLE_TOOL_SEARCH": "auto"
+  },
   "permissions": {
     "allow": [
       "Read(~/.claude/**)",
@@ -45,7 +49,7 @@
     ],
     "defaultMode": "default"
   },
-  "model": "claude-opus-4-5@20251101",
+  "model": "claude-opus-4-6[1m]",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/scripts/context-bar.sh"
