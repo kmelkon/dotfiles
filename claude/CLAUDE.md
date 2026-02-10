@@ -31,3 +31,15 @@ Never assume answers to unclear requirements. When facing ambiguity about:
 - Scope (what's included/excluded)
 
 Use AskUserQuestion with concrete options instead of guessing. Bias toward asking over assuming.
+
+## Session Continuity
+
+On session start, if `.claude/handoff.md` exists in the project, read it first. It contains context from the previous session. Acknowledge briefly what was done and what's pending.
+
+## Session Hygiene
+
+- Hard limit: 80 messages per session. After ~70 messages, warn the user: "Heads up — we're around 70 messages. Wrap up the current sub-task, commit, and start a fresh session."
+- If the session clearly exceeds 80 messages, stop accepting new sub-tasks. Finish current work, commit, and insist on a new session.
+- No scope creep: one session = one focused task. If the user pivots to something unrelated, suggest starting a new session.
+- If the user gives a terse mid-session prompt (e.g. "fix it", "next", "do it"), ask for clarification by restating the current goal and asking what specifically to do next.
+- For exploration/research tasks, ask the user to define concrete deliverables before starting (e.g. "what should the output be?"). Don't begin open-ended exploration without exit criteria.

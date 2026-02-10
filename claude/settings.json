@@ -58,5 +58,30 @@
     "typescript-lsp@claude-plugins-official": true,
     "code-review@claude-plugins-official": true,
     "playground@claude-plugins-official": true
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/count-messages.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/generate-handoff.sh",
+            "async": true,
+            "timeout": 120
+          }
+        ]
+      }
+    ]
   }
 }
