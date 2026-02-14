@@ -40,6 +40,11 @@ If the change is visual (UI components, styling, layout):
 
 Skip for non-visual changes (config, backend, types, tests).
 
+**Scaling:** Simulator screenshots are 3x Retina resolution. Scale down to 1x before saving:
+```
+sips --resampleWidth 402 /tmp/ship-before.png
+```
+
 ### 3. Create branch
 
 Format: `TICKET/TEAM/description`
@@ -66,6 +71,7 @@ git push -u origin TICKET/TEAM/description
 
 If a before screenshot was taken:
 - Take an after screenshot, save to `/tmp/ship-after.png`
+- Scale to 1x: `sips --resampleWidth 402 /tmp/ship-after.png`
 - Show both to the user
 
 ### 7. Create PR
