@@ -7,6 +7,15 @@ Personal projects are located in `/Users/karmal/Documents/Projects/`.
 - Be extremely concise in all interactions and commit messages. Sacrifice grammar for concision.
 - Plans must be multi-phase.
 - End each plan with unresolved questions (if any). Keep questions extremely concise.
+- Use emoji whenever you think it makes sense and adds to visual clarity or to
+  emphasize expressions and emotions — especially status markers (✅/❌/⚠️),
+  verdicts, and list or section categories. Do NOT use emoji in commit messages,
+  PR descriptions, or code comments.
+
+## HTML / Doc Copy
+
+- All copy in HTML pages and docs must be plain and descriptive. No marketing tone, clever headlines, or slogans.
+- Headings say what the section contains. Labels name the state literally. The visual theme can be bold; the words stay plain.
 
 ## npm Registry Issues
 
@@ -21,6 +30,11 @@ npm install --registry https://registry.npmjs.org/
 1. Delete `node_modules` and `package-lock.json`
 2. Run `npm install --registry https://registry.npmjs.org/`
 3. Commit the regenerated `package-lock.json`
+
+## Git Safety
+
+- **NEVER commit directly to master/main.** Always create a branch and open a PR.
+- When fixing something post-merge, create a new branch off master — don't commit on master.
 
 ## No Assumptions Policy
 
@@ -38,8 +52,5 @@ On session start, if `.claude/handoff.md` exists in the project, read it first. 
 
 ## Session Hygiene
 
-- Hard limit: 80 messages per session. After ~70 messages, warn the user: "Heads up — we're around 70 messages. Wrap up the current sub-task, commit, and start a fresh session."
-- If the session clearly exceeds 80 messages, stop accepting new sub-tasks. Finish current work, commit, and insist on a new session.
-- No scope creep: one session = one focused task. If the user pivots to something unrelated, suggest starting a new session.
 - If the user gives a terse mid-session prompt (e.g. "fix it", "next", "do it"), ask for clarification by restating the current goal and asking what specifically to do next.
 - For exploration/research tasks, ask the user to define concrete deliverables before starting (e.g. "what should the output be?"). Don't begin open-ended exploration without exit criteria.
